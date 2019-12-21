@@ -1,60 +1,142 @@
-/*
-Write all less code in this file
-Import another styles from less files using @import "[NAME_OF_FILE].less"
-*/
-// Example styles
-@font-face {
-  font-family: "christmas";
-  src: url("../fonts/christmaseve.ttf");
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+.flex(@justify:center,@align:center){
+  display:flex;
+  justify-content: @justify;
+  align-items: @align;
 }
 
-@bgColor: grey;
-@headerColor: #373333;
+.main_body{
+  min-height: 100vh;
+  width:100vw;
+  margin:0;
+  padding:0;
+  .flex();
+  font-family: Roboto,sans-serif;
+  background: #16a086;
 
-@size: 40px;
-@family: "christmas";
 
-.baseBodyStyles() {
-  height: 100vh;
-  width: 100vw;
-  overflow: hidden;
-  margin: 0;
-  padding: 0;
-}
+  main{
+    width:100%;
+    color:#e2f3f0;
+    text-align: center;
 
-.flex(@direction) {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: @direction;
-}
+    h3{
+      font-size: 26px;
+      font-weight:lighter;
+      margin:0 auto;
+      @media(max-width: 768px){
+        margin-top:45px;
+      }
+    }
 
-body {
-  .flex(column);
-  .baseBodyStyles();
-  background: @bgColor;
+    p{
+      font-size: 13px;
+      margin:7px auto 45px;
+    }
+    .cards{
+      width:100%;
+      max-width:850px;
+      margin:auto;
+      .flex(space-around);
+      flex-wrap: wrap;
 
-  & > * {
-    font-size: @size;
-  }
-  & img {
-    border: 0.5px solid rgba(0, 0, 0, 0.5);
-    height: 250px;
-    width: 500px;
-    border-radius: 5px;
-    box-shadow: 0px 0px 21px 30px #5c5656;
-  }
 
-  & h1 {
-    .flex(row);
-    font-family: @family;
-    color: @headerColor;
-  }
-}
+      .card{
+        width:220px;
+        height: 418px;
+        background-color: #fff;
+        color:#444444;
+        margin-bottom: 25px;
 
-.main_body {
-  &_text {
-    font-size: 35px;
-    font-family: @family;
+        &Pic{
+          cursor: pointer;
+          position: relative;
+          &:hover{
+            &>.socials{
+              opacity:1
+            }
+          }
+          .socials{
+            opacity:0;
+            height:48px;
+            width:180px;
+            background:rgba(22,160,134,.8);
+            position: absolute;
+            top:95px;
+            left:20px;
+            .flex(space-around,stretch);
+            transition: opacity 0.2s ease;
+            span{
+              .flex();
+              width:45px;
+              .wigglin{
+              animation: wiggle .3s ease-out 0s 1;//name duration timing-function delay iteration-count direction fill-mode
+              animation-play-state: paused;
+              }
+              &:hover{
+                .wigglin{
+                  animation-play-state: running;
+                }
+              }
+            }
+
+          }
+        }
+
+        &Body{
+          padding:10px;
+          h5{
+            margin:0;
+            font-weight: 500;
+            font-size: 18px;
+
+          }
+          .subtitle{
+            font-size: 13px;
+            font-style: italic;
+            margin-top:0;
+            margin-bottom:0
+          }
+          .description{
+            font-size: 13px;
+            margin-top:20px;
+            text-align:left;
+            line-height: 1.1rem;
+
+          }
+        }
+      }
+
+      @media(min-width:468px) and (max-width:768px) {
+        &{
+          max-width:659px;
+        }
+      }
+      @media(max-width:467px){
+       &{
+          max-width:439px;
+        }
+    }
+
+    }
+
+
+    @keyframes wiggle{
+      10%{
+        transform:rotate(20deg);
+      }
+      20%{
+        transform:rotate(-40deg);
+      }
+      50%{
+        transform:rotate(25deg);
+      }
+      60%{
+        transform:rotate(-10deg);
+      }
+      100%{
+        transform:rotate(0);}
+    }
   }
 }

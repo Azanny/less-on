@@ -4,14 +4,87 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Template Project</title>
-
-    <!-- DO NOT delete or change this css link tag -->
     <link rel="stylesheet" href="main.css" />
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
   </head>
   <body class="main_body">
-    <h1>Base Project Template</h1>
-    <img src="./images/testImage.jpg" alt="test image" />
-    <p class="main_body_text">Winter's comming))</p>
+    <main>
+      <h3>About us</h3>
+      <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+      <section class="cards">
+        <div class="card">
+          <div class="cardPic">
+            <img src="./images/ava-1.png" alt="ava">
+            <div class="socials">
+              <span> 
+                <img class="socPic wigglin" src="./images/f.png" alt="soc"></span>
+              <span>
+                <img class="socPic wigglin" src="./images/twitter.png" alt="soc"></span>
+              <span>
+                <img class="socPic wigglin" src="./images/gplus.png" alt="soc"></span>
+              <span>
+                <img class="socPic wigglin" src="./images/bol.png" alt="soc"></span>
+            </div>
+          </div>
+          <div class="cardBody">
+            <h5>Melannie Doe</h5>
+            <p class="subtitle">Project Manager</p>
+            <p class="description">Ut wisi enim ad minim veniam, quis nostrud exerei tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat </p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="cardPic">
+            <img src="./images/ava-2.png" alt="ava">
+            <div class="socials">
+              <span> 
+                <img class="socPic wigglin" src="./images/f.png" alt="soc">
+              </span>
+              <span>
+                <img class="socPic wigglin" src="./images/twitter.png" alt="soc"></span>
+              <span>
+                <img class="socPic wigglin" src="./images/gplus.png" alt="soc"></span>
+              <span>
+                <img class="socPic wigglin" src="./images/bol.png" alt="soc"></span>
+            </div>
+          </div>
+          <div class="cardBody">
+            
+            <h5>Jhonnie Doe</h5>
+            <p class="subtitle">Graphic Designer</p>
+            <p class="description">Ut wisi enim ad minim veniam, quis nostrud exerei tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat </p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="cardPic">
+            <img src="./images/ava-3.png" alt="ava">
+            <div class="socials">
+              <span> 
+                <img class="socPic wigglin" src="./images/f.png" alt="soc">
+              </span>
+              <span>
+                <img class="socPic wigglin" src="./images/twitter.png" alt="soc"></span>
+              <span>
+                <img class="socPic wigglin" src="./images/gplus.png" alt="soc"></span>
+              <span>
+                <img class="socPic wigglin" src="./images/bol.png" alt="soc"></span>
+            </div>
+          </div>
+          <div class="cardBody">
+            
+            <h5>Daniel Doe</h5>
+            <p class="subtitle">Web Designer</p>
+            <p class="description">Ut wisi enim ad minim veniam, quis nostrud exerei tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script type="text/javascript">
+    $('span').mouseout(function(){
+       $(".socPic").removeClass("wigglin");
+       $(".socPic").width();
+       $(".socPic").addClass("wigglin");
+    });
+</script>
   </body>
 </html>
